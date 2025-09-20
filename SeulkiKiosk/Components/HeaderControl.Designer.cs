@@ -28,10 +28,49 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            lblTitle = new Label();
+            lblDescription = new Label();
+            SuspendLayout();
+            // 
+            // lblTitle
+            // 
+            lblTitle.AutoSize = true;
+            lblTitle.Font = new Font("맑은 고딕", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTitle.Location = new Point(39, 14);
+            lblTitle.Margin = new Padding(2, 0, 2, 0);
+            lblTitle.Name = "lblTitle";
+            lblTitle.Size = new Size(84, 30);
+            lblTitle.TabIndex = 0;
+            lblTitle.Text = "lblTitle";
+            // 
+            // lblDescription
+            // 
+            lblDescription.AutoSize = true;
+            lblDescription.Font = new Font("맑은 고딕", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblDescription.ForeColor = Color.Gray;
+            lblDescription.Location = new Point(39, 58);
+            lblDescription.Margin = new Padding(2, 0, 2, 0);
+            lblDescription.Name = "lblDescription";
+            lblDescription.Size = new Size(112, 21);
+            lblDescription.TabIndex = 1;
+            lblDescription.Text = "lblDescription";
+            // 
+            // HeaderControl
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(lblDescription);
+            Controls.Add(lblTitle);
+            Margin = new Padding(2, 2, 2, 2);
+            Name = "HeaderControl";
+            Size = new Size(627, 89);
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private Label lblTitle;
+        private Label lblDescription;
     }
 }
