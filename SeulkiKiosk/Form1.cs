@@ -12,9 +12,9 @@ namespace SeulkiKiosk
 
         }
 
-        private void roundedPanel1_Paint(object sender, PaintEventArgs e)
+        private void productCard1_Clicked(object sender, SeulkiKiosk.Components.Products.IProductCard e)
         {
-
+            MessageBox.Show($"{e.Title} {e.Price:0,000}원");
         }
     }
 }

@@ -28,8 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Models.Product product1 = new Models.Product();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            Models.Product product2 = new Models.Product();
+            Models.Product product3 = new Models.Product();
+            Models.Product product4 = new Models.Product();
+            Models.Product product5 = new Models.Product();
             headerControl1 = new SeulkiKiosk.Components.HeaderControl();
-            productCard1 = new SeulkiKiosk.Components.Products.ProductCard();
+            productList1 = new SeulkiKiosk.Components.Products.ProductList();
             SuspendLayout();
             // 
             // headerControl1
@@ -41,25 +47,50 @@
             headerControl1.Location = new Point(0, 0);
             headerControl1.Margin = new Padding(2);
             headerControl1.Name = "headerControl1";
-            headerControl1.Size = new Size(701, 141);
+            headerControl1.Size = new Size(640, 141);
             headerControl1.TabIndex = 0;
             headerControl1.Title = "슬기의 음식점에 오신 걸 환영합니다.";
             headerControl1.Load += headerControl1_Load;
             // 
-            // productCard1
+            // productList1
             // 
-            productCard1.BackColor = Color.Transparent;
-            productCard1.Location = new Point(44, 135);
-            productCard1.Name = "productCard1";
-            productCard1.Size = new Size(150, 150);
-            productCard1.TabIndex = 1;
+            productList1.BackColor = Color.Transparent;
+            product1.ID = 1;
+            product1.Image = (Image)resources.GetObject("product1.Image");
+            product1.Price = new decimal(new int[] { 2000, 0, 0, 0 });
+            product1.Title = "사과";
+            product2.ID = 2;
+            product2.Image = (Image)resources.GetObject("product2.Image");
+            product2.Price = new decimal(new int[] { 19000, 0, 0, 0 });
+            product2.Title = "치킨";
+            product3.ID = 3;
+            product3.Image = (Image)resources.GetObject("product3.Image");
+            product3.Price = new decimal(new int[] { 3000, 0, 0, 0 });
+            product3.Title = "쿠키";
+            product4.ID = 4;
+            product4.Image = (Image)resources.GetObject("product4.Image");
+            product4.Price = new decimal(new int[] { 4500, 0, 0, 0 });
+            product4.Title = "햄버거";
+            product5.ID = 5;
+            product5.Image = (Image)resources.GetObject("product5.Image");
+            product5.Price = new decimal(new int[] { 990, 0, 0, 0 });
+            product5.Title = "아이스크림";
+            productList1.Items.Add(product1);
+            productList1.Items.Add(product2);
+            productList1.Items.Add(product3);
+            productList1.Items.Add(product4);
+            productList1.Items.Add(product5);
+            productList1.Location = new Point(34, 113);
+            productList1.Name = "productList1";
+            productList1.Size = new Size(547, 415);
+            productList1.TabIndex = 2;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(701, 544);
-            Controls.Add(productCard1);
+            ClientSize = new Size(640, 689);
+            Controls.Add(productList1);
             Controls.Add(headerControl1);
             ForeColor = Color.CornflowerBlue;
             Margin = new Padding(2);
@@ -71,6 +102,6 @@
         #endregion
 
         private Components.HeaderControl headerControl1;
-        private Components.Products.ProductCard productCard1;
+        private Components.Products.ProductList productList1;
     }
 }
