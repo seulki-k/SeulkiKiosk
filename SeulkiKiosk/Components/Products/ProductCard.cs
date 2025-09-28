@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SeulkiKiosk.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,6 +18,18 @@ namespace SeulkiKiosk.Components.Products
         public string Title { get; set; }
         public decimal Price { get; set; }
         public Image Image { get; set; }
+
+        public Product ToProduct()
+        {
+            return new Product
+            {
+                ID = ID,
+                Title = Title,
+                Price = Price,
+                Image = Image,
+            };
+
+        }
     }
 
 

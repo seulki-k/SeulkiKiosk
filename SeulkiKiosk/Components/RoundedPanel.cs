@@ -42,13 +42,13 @@ namespace SeulkiKiosk.Components
 		}
 
 		[DefaultValue(typeof(Color), "Black"), Category("커스텀"), Description("보더 색상을 변경합니다.")]
-        public Color BolderColor
+        public Color BorderColor
 		{
 			get { return _borderColor; }
 			set { _borderColor = value; this.Invalidate(); }
 		}
 		[DefaultValue(typeof(Color), "White"), Category("커스텀"), Description("보더 내부 색상을 변경합니다.")]
-        public Color InnerBackGroundColor
+        public Color InnerBackgroundColor
 		{
 			get { return _innerBackgroundColor; }
 			set { _innerBackgroundColor = value; this.Invalidate(); }

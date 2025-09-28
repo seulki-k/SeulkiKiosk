@@ -13,15 +13,18 @@ using System.Windows.Forms;
 
 namespace SeulkiKiosk.Components.Products
 {
+    [DefaultEvent("ItemClicked")]
     public partial class ProductList : UserControl
     {
+        public event EventHandler<Product>? ItemClicked;
         public ProductList()
         {
             InitializeComponent();
 
             Items.CollectionChanged += Items_CollectionChanged;
         }
-
+        public int BorderWidth { get => roundedPanel1.BorderWidth; set => roundedPanel1.BorderWidth = value; }
+        public Color BorderColor { get => roundedPanel1.BorderColor; set => roundedPanel1.BorderColor = value; }
         private void Items_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs e)
         {
             flpnl.Controls.Clear();
@@ -34,8 +37,14 @@ namespace SeulkiKiosk.Components.Products
                     Title = item.Title,
                     Image = item.Image!,
                 };
+                productCard.Clicked += ProductCard_Clicked;
                 flpnl.Controls.Add(productCard);
             }
+        }
+
+        private void ProductCard_Clicked(object? sender, IProductCard e)
+        {
+            ItemClicked?.Invoke(this, e.ToProduct());
         }
 
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
